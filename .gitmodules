@@ -7,3 +7,6 @@
 [submodule "ipipe-arm"]
 	path = ipipe-arm
 	url = git://git.xenomai.org/ipipe-arm.git
+[submodule "linux-xlnx"]
+	path = linux-xlnx
+	url = https://github.com/xilinx/linux-xlnx.git

@@ -9,7 +9,7 @@ export CROSS_COMPILE=arm-linux-gnueabihf-
 export PATH=$WORKING_DIR/u-boot-xlnx/tools/:$PATH
 
 # Download repos
-git submodules init
+git submodule init
 wget -O $LINARO_GZ https://releases.linaro.org/debian/images/developer-armhf/latest/linaro-stretch-developer-20170706-43.tar.gz
 
 # Working directories for outputs
@@ -31,7 +31,6 @@ export SDCARD=$PWD/SDCard
 echo "Going to compile u-boot..."
 # compilazione di u-boot
 cd $UBOOT
-sed -e '271d' include/configs/zynq-common.h 
 git apply ../u-boot-no-ramdisk-sdcard.patch
 make zynq_zybo_config
 make -j 2 u-boot.elf
@@ -45,7 +44,7 @@ cp $XIL_LINUX/arch/arm/configs/xilinx_zynq_defconfig $LINUX_HOME/arch/arm/config
 $XENO_HOME/scripts/prepare-kernel.sh --linux=$LINUX_HOME --arch=arm --verbose
 cd $LINUX_HOME
 make xilinx_zynq_defconfig
-make menuconfig
+cp ../.config ./
 make
 make UIMAGE_LOADADDR=0x8000 uImage modules
 make modules_install INSTALL_MOD_PATH=$ZYNQ_MODULES
