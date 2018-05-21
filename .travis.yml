@@ -1,0 +1,13 @@
+sudo: required
+language: C
+services:
+- docker
+before_install:
+- docker info
+- docker build -t mariobarbareschi/xenomai-zynq .
+before_script:
+- docker run -it -v $PWD:/opt mariobarbareschi/xenomai-zynq /bin/bash -c "cd /opt; ./run_compilation.sh"
+script:
+- docker images | grep -q mariobarbareschi/xenomai-zynq
+after_script:
+- ls $PWD/SDCard | grep -q uImage
