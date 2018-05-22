@@ -6,7 +6,7 @@ This is a script automation project for compiling Xenomai on a Zynq-7000 FPGA th
 Be sure to have installed the last [Docker]. This project will give to you an uncompressed Xenomai and an u-boot images intended to be load onto a Zynq-7000 device.
 Clone this repo by executing:
 ```sh
-$ git clone https://github.com/darkiaspis/linux-switch-docker.git
+$ git clone https://github.com/mariobarbareschi/xenomai-zynq.git
 ```
 
 ## X-Compiling
@@ -20,7 +20,7 @@ $ docker run -it -v $PWD:/opt mariobarbareschi/xenomai-zynq /bin/bash -c "cd /op
 If you don't want to pull the image from the [Docker] hub, you can get it by your own:
 
 ```sh
-$ cd linux-switch-docker
+$ cd xenomai-zynq
 $ docker build -t <image-name> .
 ```
 
