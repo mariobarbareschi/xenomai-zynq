@@ -8,10 +8,6 @@ export ARCH=arm
 export CROSS_COMPILE=arm-linux-gnueabihf-
 export PATH=$WORKING_DIR/u-boot-xlnx/tools/:$PATH
 
-# Download repos
-git submodule init
-wget -O $LINARO_GZ https://releases.linaro.org/debian/images/developer-armhf/latest/linaro-stretch-developer-20170706-43.tar.gz
-
 # Working directories for outputs
 mkdir -p xeno3_build
 mkdir -p xeno3_zynq_stage
@@ -58,12 +54,6 @@ git checkout tags/v3.0.6 -b xenomai_3.0.6
 cd $XENO_BUILD
 $XENO_HOME/configure CFLAGS="-march=armv7-a -mfpu=vfp3 -mfloat-abi=hard" LDFLAGS="-march=armv7-a" --build=x86_64-pc-linux-gnu --host=arm-none-linux-gnueabi --with-core=cobalt --enable-smp --enable-tls CC=arm-linux-gnueabihf-gcc LD=arm-linux-gnueabihf-ld
 make DESTDIR=$XENO_ZYNQ_STAGE install
-
-echo "Going to extract the Linaro filesystem..."
-
-# preparazione del filesystem
-cd $WORKING_DIR
-sudo tar -xzf $LINARO_GZ
 
 echo "Compilation succeeds"
 
