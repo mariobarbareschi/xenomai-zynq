@@ -26,7 +26,7 @@ $ docker build -t <image-name> .
 
 ---------
 ### LICENSE
-* [GPLV3.0](https://www.gnu.org/licenses/licenses.html)
+* [GNU AGPLV3.0](https://www.gnu.org/licenses/licenses.html)
 ### Contributing
 Github is for social coding.
 If you want to write code, I encourage contributions through pull requests from forks of this repository.
