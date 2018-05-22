@@ -13,7 +13,7 @@ $ git clone https://github.com/mariobarbareschi/xenomai-zynq.git
 Actually, the docker image is used for compiling by arm-gcc toolchains. The whole commands you need are included in run_compilation.sh file. So just be sure that the current repository is cloned onto your pc host, then:
 ```sh
 $ cd xenomai-zynq
-$ docker pull dark1asp1s/linux-switch-docker
+$ docker pull mariobarbareschi/xenomai-zynq
 $ docker run -it -v $PWD:/opt mariobarbareschi/xenomai-zynq /bin/bash -c "cd /opt; ./run_compilation.sh"
 ```
 
