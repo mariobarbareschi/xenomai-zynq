@@ -1,8 +1,6 @@
 #!/bin/bash
 
 export WORKING_DIR=$PWD
-export LINARO_GZ=$WORKING_DIR/linaro.tar.gz
-export LINARO_BINARY=$WORKING_DIR/binary
 
 export ARCH=arm
 export CROSS_COMPILE=arm-linux-gnueabihf-
