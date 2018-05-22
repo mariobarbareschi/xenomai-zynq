@@ -16,6 +16,8 @@ deploy:
   provider: releases
   api_key:
     secure: ntowupeKWd0ZU8chobjMb3CfV/pcEliM1BB6x8uFhzftN9P21la4YoTW1APfnoV+G+Vraw1OfM4yjK7hBQdzyPDjVzqLBqDKFXoyFakuCX5S1HpKEMjvS3EhT+utuEsnd+5GaBJ/FAQxG/onjx+dQ/n18FRjKXsR3m/2/Ptm7K6Z140Txnap6ucWaZFzpldkRKfbqXbtrZqT42seDNQ0j/JhrL2pbG8WZD28punkso7rVGHbdnmijLwO7X1SzHr705Fe+sZ0F8/eqhckapzwDYXidla+e19+OdFlFMx9zQfvPdj7NzgivOkFvOHfx7vFieRHOaelkpaHpxG534BD/eq1MPanqDk9Pocqrwuwl4BaT8nFxUR5lZgaiRwqBKptB8qXoieipfohYySZJHGe+cPFBUVwmyM9J+v+t4htCybF0WJsvLioVoV9+AFmT88t141oqXiK0LTUJeTHLE2muAu7PObD2tlL+v5E1neAlYpye33DdbDspTOFY9dWT//mWU9MX2TAaHR499Lop0ck6f4vJcLctBHZtu+fbxfvuOwxWOfgaI86lZ2BQOzU5BLgf4KKydHl3Q7BCidQaIX5SY0964zeU1HC7UFRGRNenu9lhiC8DGe9t5aRcFo4QKbic6L8pA0jvcdaPGVdAObdVKO9ewsBMRptNZBCjK7EmUU=
-  file: SDCard/*
+  file_glob: true
+  file: SDCard/**/*
+  skip_cleanup: true
   on:
     repo: mariobarbareschi/xenomai-zynq
